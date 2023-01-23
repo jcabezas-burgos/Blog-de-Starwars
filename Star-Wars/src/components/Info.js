@@ -14,7 +14,7 @@ function Info() {
     <div>
       <div className="pt-5" id="scrollspyCharacters">
         <h2>Personajes</h2>
-        <div className="col-12 col-md-6 col-xl-3 d-flex justify-content-evenly list-group">
+        <div className="d-flex justify-content-evenly row row-cols-auto">
             {store.people?.map((item) => {
               return (
                 <Card
@@ -28,7 +28,7 @@ function Info() {
       </div>
       <div className="pt-5" id="scrollspyPlanets">
         <h2>Planetas</h2>
-        <div className="col-12 col-md-6 col-xl-3 d-flex justify-content-evenly list-group">
+        <div className="d-flex justify-content-evenly row row-cols-auto">
             {store.planets?.map((item) => {
               return (
                 <Card
@@ -42,7 +42,7 @@ function Info() {
       </div>
       <div className="pt-5" id="scrollspyVehicles">
         <h2>Vehículos</h2>
-        <div className="col-12 col-md-6 col-xl-3 d-flex justify-content-evenly list-group">
+        <div className="d-flex justify-content-evenly row row-cols-auto">
             {store.vehicles?.map((item) => {
               return (
                 <Card
