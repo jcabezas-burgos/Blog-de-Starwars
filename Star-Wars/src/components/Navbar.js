@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/context";
 
 
 function Navbar() {
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
       <div className="container-fluid">
@@ -47,21 +49,16 @@ function Navbar() {
             Favoritos
           </button>
           <ul className="dropdown-menu dropdown-menu-end">
-            <li>
-              <a className="dropdown-item" href="">
-                Action
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="">
-                Another action
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="">
-                Something else here
-              </a>
-            </li>
+            {store.favorites.map((item, index) => {
+              return (
+                <li className="dropdown-item" key={index}>
+                  {item.name}
+                  <button className="ml-2 h5"
+                    onClick={() => actions.deleteFavorites(index)}
+                  >x</button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

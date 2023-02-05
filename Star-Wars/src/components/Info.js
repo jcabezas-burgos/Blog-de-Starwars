@@ -21,6 +21,7 @@ function Info() {
                   key={item.uid}
                   cardName={item.name}
                   cardLink= {"/character/"+ item.uid}
+                  buttonClick= {() => { actions.addFavorites(item) }}
                 />
               );
             })}
@@ -35,6 +36,7 @@ function Info() {
                   key={item.uid}
                   cardName={item.name}
                   cardLink= {"/planet/"+ item.uid}
+                  buttonClick= {() => { actions.addFavorites(item) }}
                 />
               );
             })}
@@ -49,6 +51,7 @@ function Info() {
                   key={item.uid}
                   cardName={item.name}
                   cardLink= {"/vehicle/"+ item.uid}
+                  buttonClick= {() => { actions.addFavorites(item) }}
                 />
               );
             })}

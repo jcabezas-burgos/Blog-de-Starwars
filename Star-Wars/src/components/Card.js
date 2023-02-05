@@ -28,7 +28,7 @@ function Card(props) {
                 >
                   ¡Conocer más!
                 </Link>
-                <button className="btn btn-outline-danger" type="button">
+                <button className="btn btn-outline-danger" type="button" onClick={props.buttonClick}>
                   Fav
                 </button>
               </div>
