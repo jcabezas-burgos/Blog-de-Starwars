@@ -2,11 +2,11 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/context";
 import { useParams } from "react-router-dom";
 
-function LearnMorePlanet() {
+function LearnMoreCharacter() {
   const { store, actions } = useContext(Context);
   const { uid } = useParams();
   useEffect(() => {
-    actions.getPlanet(uid);
+    actions.getCharacter(uid);
   }, []);
   return (
     <div className="card text-bg-secondary mb-3">
@@ -20,18 +20,18 @@ function LearnMorePlanet() {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{store.planet.properties?.name}</h5>
+            <h5 className="card-title">{store.character.properties?.name}</h5>
             <p className="card-text">
-              <small className="text">{store.planet.description}</small>
+              <small className="text">{store.character.description}</small>
             </p>
             <p className="card-text">
-            Population: {store.planet.properties?.population}
+              Birth year: {store.character.properties?.birth_year}
             </p>
             <p className="card-text">
-            Climate: {store.planet.properties?.climate}
+              Hair color: {store.character.properties?.hair_color}
             </p>
             <p className="card-text">
-            Terrain: {store.planet.properties?.terrain}
+              Height: {store.character.properties?.height}
             </p>
           </div>
         </div>
@@ -40,4 +40,4 @@ function LearnMorePlanet() {
   );
 }
 
-export default LearnMorePlanet;
+export default LearnMoreCharacter;

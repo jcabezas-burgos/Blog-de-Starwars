@@ -1,12 +1,14 @@
+
+
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/context";
 import { useParams } from "react-router-dom";
 
-function LearnMoreCharacter() {
+function LearnMore() {
   const { store, actions } = useContext(Context);
   const { uid } = useParams();
   useEffect(() => {
-    actions.getCharacter(uid);
+    actions.getVehicle(uid);
   }, []);
   return (
     <div className="card text-bg-secondary mb-3">
@@ -20,18 +22,18 @@ function LearnMoreCharacter() {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{store.character.properties?.name}</h5>
+            <h5 className="card-title">{store.vehicle.properties?.name}</h5>
             <p className="card-text">
-              <small className="text">{store.character.description}</small>
+              <small className="text">{store.vehicle.description}</small>
             </p>
             <p className="card-text">
-              Birth year: {store.character.properties?.birth_year}
+              Cargo capacity: {store.vehicle.properties?.cargo_capacity}
             </p>
             <p className="card-text">
-              Hair color: {store.character.properties?.hair_color}
+              Crew: {store.vehicle.properties?.crew}
             </p>
             <p className="card-text">
-              Height: {store.character.properties?.height}
+              Manufacturer: {store.vehicle.properties?.manufacturer}
             </p>
           </div>
         </div>
@@ -40,4 +42,4 @@ function LearnMoreCharacter() {
   );
 }
 
-export default LearnMoreCharacter;
+export default LearnMore;
